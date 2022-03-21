@@ -54,3 +54,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'bulma-rails', '~> 0.9.3'
+gem 'simple_form', '~> 5.1'
+gem 'guard', '~> 2.18'
+gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
