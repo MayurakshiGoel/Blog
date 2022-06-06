@@ -1,0 +1,31 @@
+<% content_for :page_name, @comment.name %>
+<h1><%= @comment.name %></h1>
+<h2><%= @comment.comment %></h2>
+<p><%= link_to 'Destroy',[@comment.post, @comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<br>
+<br>
+<h3> <%= @comment.replies.count %> Replies <h3>
+<style>
+  table, th, td {
+  column-width: 100px;
+}
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comment.replies.each do |post| %>
+      <tr>
+        <td><%= post.user %></td>
+        <td><%= post.content %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>

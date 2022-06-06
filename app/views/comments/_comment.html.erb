@@ -1,0 +1,21 @@
+<% @c = comment.id %>
+<style>
+table, th, td {
+  column-width: 200px;
+}
+</style>
+<table>
+  <tbody>
+      <tr>
+        <p><%= comment.comment %>   </p>
+        <small>by <%= comment.name %></small>
+        <br>
+        <%= link_to 'Destroy',[comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>  |  
+        <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>  |  
+        <%= link_to 'Show', post_comment_path(@post, comment) %>  
+
+      </tr>
+
+  </tbody>
+</table>
+<hr>

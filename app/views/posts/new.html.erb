@@ -1,0 +1,23 @@
+<h4 id="notice"><%= notice %></h4>
+<h1>Add new Post</h1>
+
+	<%= simple_form_for @post do |f| %>
+	<div class="field">
+		<h3><%= f.label "Title" %></h3>
+		<br>
+		<%= f.text_area :title, size: "70x2" %>
+		<!-- <h3><%= f.input :title, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>  </h3> -->
+	</div>
+
+
+
+	<div class="field">
+		<h3><%= f.label "Content" %></h3>
+		<br>
+		<%= f.text_area :content, size: "70x5" %>
+		<!-- <h3><%= f.input :content, input_html: {class: 'text_area'}, wrapper: false, label_html: {class: 'label'} %></h3> -->
+	</div>
+	<br>
+	<%= f.button :submit, "Create new post", class: "Button is-primary" %>
+	
+	<% end %>

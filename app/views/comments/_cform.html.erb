@@ -1,0 +1,15 @@
+<h4 id="notice"><%= notice %></h4>
+<h3>Add new comment</h3>
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+	<div class="field">
+		<h3><%= f.label "Name" %></h3>
+	    <%= f.text_area :name, size: "70x2" %>
+	</div>
+	<br>
+	<div class="field">
+		<h3><%= f.label "Comment" %></h3>
+        <%= f.text_area :comment, size: "70x2" %>    
+	</div>
+	<br>
+	<%= f.submit%>
+<% end %>

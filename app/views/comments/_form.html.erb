@@ -1,0 +1,14 @@
+<%= simple_form_for @comment do |f| %>
+<div class="field">
+  <h3><%= f.label "Name" %></h3>
+  <%= f.text_area :name, size: "70x2" %>    
+</div>
+<br>
+<div class="field">
+  <h3><%= f.label "Comment" %></h3>
+  <%= f.text_area :comment, size: "70x5" %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

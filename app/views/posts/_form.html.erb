@@ -1,0 +1,14 @@
+<%= simple_form_for @post do |f| %>
+<div class="field">
+  <h3><%= f.label "Title" %></h3>
+  <%= f.text_area :title, size: "70x2" %>    
+</div>
+<br>
+<div class="field">
+  <h3><%= f.label "Content" %></h3>
+  <%= f.text_area :content, size: "70x5" %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

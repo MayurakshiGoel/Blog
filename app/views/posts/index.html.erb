@@ -1,0 +1,39 @@
+<% if current_user %>
+  <h2>Hi, <%= current_user.email %></h2>
+<% end %>
+<% if @posts.blank? %>
+	<h1>There are no posts</h1>
+<% else %>
+	<h1>Posts</h1>
+
+<style>
+table, th, td {
+  border:1px solid black;
+  column-width: 100px;
+}
+
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %><br><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p><%= link_to "Add new Post", {:action => 'new' }%></p>
+<% end %>

@@ -1,0 +1,17 @@
+<% content_for :page_name, @comment.name %>
+<h1><%= @comment.name %></h1>
+<h2><%= @comment.comment %></h2>
+<%= link_to 'Destroy',[@comment.post, @comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_post_comment_path(@comment.post, @comment) %>
+<%= link_to 'Back', post_path(@comment.post) %>
+<br>
+<br>
+<hr />
+
+<h3> <%= @comment.replies.count %> Replies <h3>
+<hr />
+<%= render @comment.replies %>
+<hr />
+
+<%= render 'replies/rform' %>
+

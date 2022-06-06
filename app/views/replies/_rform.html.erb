@@ -1,0 +1,12 @@
+<h4>Add new Reply</h4>
+
+	<%= simple_form_for([@comment, @comment.replies.build]) do |f| %>
+	<p>
+<h3><%= f.label "Name" %></h3>
+      <%= f.text_area :user, size: "70x2" %>
+  <p>
+<h3><%= f.label "Content" %></h3>
+      <%= f.text_area :content, size: "70x2" %>
+  </p>
+		<%= f.submit %>
+<% end %>
